@@ -1,25 +1,18 @@
 import React from 'react'
-import profileStStyle from './Profile.module.css'
+import profileStyle from './Profile.module.css'
 import 'fontsource-roboto';
+import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/Profile";
 
-const Profile =()=> {
+const Profile = (props) => {
     return (
-        <div className={profileStStyle.contentBox}>
-            <div>
-                <img src="" alt=""/>
-            </div>
-            <div>
-                ava + description
-            </div>
-            <div>
-                My posts
-                <div>
-                    New post
-                </div>
-                <div>Post 1</div>
-                <div>Post 2</div>
-                <div>Post 3</div>
-            </div>
+        <div className={`${profileStyle.contentBox} ${'flexColumnBoxCentered'}`}>
+            <ProfileInfo/>
+            <MyPosts
+                state={props.state}
+                addPost={props.addPost}
+                updatePostText = {props.updatePostText}
+            />
         </div>
     )
 }

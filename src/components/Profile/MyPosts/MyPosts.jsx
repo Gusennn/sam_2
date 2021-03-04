@@ -1,27 +1,48 @@
 import React from 'react'
-import profileStStyle from './Profile.module.css'
+import MyPostsStyle from './MyPosts.module.css'
 import 'fontsource-roboto';
+import Post from "./Post/Post";
+import Button from "@material-ui/core/Button";
+import SvgIcon from "@material-ui/core/SvgIcon";
+import SendIcon from '@material-ui/icons/Send';
+import Input from "@material-ui/core/Input";
 
-const Profile =()=> {
+const MyPosts = (props) => {
+    let postData = props.state.profilePage.posts
+    let newPostMessageArray = postData
+        .map( npma => <Post
+            postMessage={npma.postMessage}
+            likesCount={npma.likesCount}
+        />)
+    //--------------------
+
+    let onPostAdd =()=> {
+        props.addPost()
+    }
+    let onTextAreaChange =(e)=> {
+        let text = e.target.value
+        props.updatePostText(text)
+    }
+    //----------------------------
     return (
-        <div className={profileStStyle.contentBox}>
-            <div>
-                <img src="" alt=""/>
+        <div>
+            My posts
+            <div className={`${MyPostsStyle.addToolsBox} ${'flexRowBoxCentered'}`}>
+                <Input
+                    placeholder={"Placeholder"}
+                    onChange={onTextAreaChange}
+                    value={props.state.profilePage.newPostText}
+                />
+                <Button variant={"text"}
+                        color={"secondary"}
+                        onClick={onPostAdd}
+                >
+                    <SvgIcon component={SendIcon}/>
+                </Button>
             </div>
-            <div>
-                ava + description
-            </div>
-            <div>
-                My posts
-                <div>
-                    New post
-                </div>
-                <div>Post 1</div>
-                <div>Post 2</div>
-                <div>Post 3</div>
-            </div>
+            {newPostMessageArray}
         </div>
     )
 }
 
-export default Profile;
+export default MyPosts;

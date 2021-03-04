@@ -1,27 +1,19 @@
 import React from 'react'
-import profileStStyle from './Profile.module.css'
+import PostStStyle from './Post.module.css'
 import 'fontsource-roboto';
 
-const Profile =()=> {
+const Post = (props) => {
     return (
-        <div className={profileStStyle.contentBox}>
-            <div>
-                <img src="" alt=""/>
-            </div>
-            <div>
-                ava + description
-            </div>
-            <div>
-                My posts
-                <div>
-                    New post
-                </div>
-                <div>Post 1</div>
-                <div>Post 2</div>
-                <div>Post 3</div>
-            </div>
+        <div>
+            <span>
+            {props.postMessage}
+            </span>
+            <span>
+                <br/>
+                {props.likesCount}
+            </span>
         </div>
     )
 }
 
-export default Profile;
+export default Post;

@@ -1,11 +1,14 @@
-.nav {
-
+.dialogsBox {
 }
 
-.navItems {
-}
-
-.item {
+.dialogItems {
     display: flex;
-    margin: 0 10px;
+    flex-wrap: wrap;
+}
+.dItem {
+    display: flex;
+    margin: 5px;
+}
+.messageItems {
+    padding: 5px;
 }
