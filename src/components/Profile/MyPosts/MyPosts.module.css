@@ -1,0 +1,9 @@
+.contentBox {
+    background: gold;
+    display: inline-block;
+    margin: 0 auto;
+    width: 50%;
+    font-size: 32px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
