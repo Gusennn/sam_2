@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from "./redux/state";
+import store from "./redux/store";
 import {BrowserRouter} from "react-router-dom";
 
 export let rerenderMainTree = (state) => {
@@ -12,10 +12,10 @@ export let rerenderMainTree = (state) => {
             <BrowserRouter>
                 <App
                     state={state}
-                    addPost={store.addPost.bind(store)}
-                    updatePostText={store.updatePostText.bind(store)}
-                    addDialogName={store.addDialogName.bind(store)}
-                    addDialogMessage={store.addDialogMessage.bind(store)}
+                    dispatch={store.dispatch.bind(store)}
+                    store={store}
+                    // addDialogName={store.addDialogName.bind(store)}
+                    // addDialogMessage={store.addDialogMessage.bind(store)}
                 />
             </BrowserRouter>
         </React.StrictMode>,

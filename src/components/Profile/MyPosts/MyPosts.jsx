@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import SendIcon from '@material-ui/icons/Send';
 import Input from "@material-ui/core/Input";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profileReducer";
 
 const MyPosts = (props) => {
     let postData = props.state.profilePage.posts
@@ -17,11 +18,11 @@ const MyPosts = (props) => {
     //--------------------
 
     let onPostAdd =()=> {
-        props.addPost()
+        props.dispatch(addPostActionCreator())
     }
     let onTextAreaChange =(e)=> {
         let text = e.target.value
-        props.updatePostText(text)
+        props.dispatch(updateNewPostTextActionCreator(text))
     }
     //----------------------------
     return (

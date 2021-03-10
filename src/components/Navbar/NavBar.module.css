@@ -1,5 +1,8 @@
 .navBox {
-    border-bottom: 1px solid black;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    background: #fff;
 }
 
 .navItems {

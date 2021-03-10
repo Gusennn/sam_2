@@ -9,9 +9,8 @@ const Profile = (props) => {
         <div className={`${profileStyle.contentBox} ${'flexColumnBoxCentered'}`}>
             <ProfileInfo/>
             <MyPosts
+                dispatch={props.dispatch}
                 state={props.state}
-                addPost={props.addPost}
-                updatePostText = {props.updatePostText}
             />
         </div>
     )

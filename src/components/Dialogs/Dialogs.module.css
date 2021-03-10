@@ -1,0 +1,22 @@
+.dialogsBox {
+}
+
+.dialogItems {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+    padding: 25px;
+}
+.dItem {
+    display: flex;
+    margin: 5px;
+}
+.messageItems {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 25px;
+}
+.editTools {
+    padding: 25px;
+}
